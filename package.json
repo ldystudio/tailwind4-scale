@@ -1,0 +1,31 @@
+{
+  "name": "tailwind4-scale",
+  "version": "1.0.0",
+  "description": "Tailwind CSS v4 移动端适配工具类库，基于设计稿像素的等比缩放方案",
+  "keywords": [
+    "tailwindcss",
+    "tailwind",
+    "mobile",
+    "scale",
+    "responsive",
+    "design-token"
+  ],
+  "license": "MIT",
+  "author": "ldystudio",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ldystudio/tailwind4-scale.git"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./src/scale.css",
+    "./scale.css": "./src/scale.css"
+  },
+  "main": "./src/scale.css",
+  "files": [
+    "src"
+  ],
+  "peerDependencies": {
+    "tailwindcss": ">=4.0.0"
+  }
+}
