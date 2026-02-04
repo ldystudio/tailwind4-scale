@@ -14,12 +14,14 @@
 
 /* ========== 视口适配 ========== */
 :root {
-    --tw-viewport-font-size: 4.26667vw;
+    /* 默认：1 设计稿像素 = 1/16 rem */
+    --tw-scale: 0.0625rem;
     /* 100vw / 375 * 16，375px 视口下 = 16px */
-    --tw-viewport-font-size-min: 13.653px;
+    --tw-viewport-font-size: 4.26667vw;
     /* 320px × 4.26667% */
-    --tw-viewport-font-size-max: 32px;
+    --tw-viewport-font-size-min: 13.653px;
     /* 750px × 4.26667% */
+    --tw-viewport-font-size-max: 32px;
 }
 
 html {
@@ -30,352 +32,346 @@ html {
     );
 }
 
-/* ========== 缩放变量 ========== */
-@theme inline {
-    /* 默认：1 设计稿像素 = 1/16 rem */
-    --scale: var(--tw-scale, 0.0625rem);
-}
-
 /* 宽度 */
 @utility w-s-* {
-    width: calc(var(--scale) * --value(integer));
+    width: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 高度 */
 @utility h-s-* {
-    height: calc(var(--scale) * --value(integer));
+    height: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 最小宽度 */
 @utility min-w-s-* {
-    min-width: calc(var(--scale) * --value(integer));
+    min-width: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 最大宽度 */
 @utility max-w-s-* {
-    max-width: calc(var(--scale) * --value(integer));
+    max-width: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 最小高度 */
 @utility min-h-s-* {
-    min-height: calc(var(--scale) * --value(integer));
+    min-height: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 最大高度 */
 @utility max-h-s-* {
-    max-height: calc(var(--scale) * --value(integer));
+    max-height: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 同时设置宽高 */
 @utility size-s-* {
-    width: calc(var(--scale) * --value(integer));
-    height: calc(var(--scale) * --value(integer));
+    width: calc(var(--tw-scale) * --value(integer));
+    height: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 内边距 - 四边 */
 @utility p-s-* {
-    padding: calc(var(--scale) * --value(integer));
+    padding: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 内边距 - 水平方向 */
 @utility px-s-* {
-    padding-inline: calc(var(--scale) * --value(integer));
+    padding-inline: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 内边距 - 垂直方向 */
 @utility py-s-* {
-    padding-block: calc(var(--scale) * --value(integer));
+    padding-block: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 内边距 - 上 */
 @utility pt-s-* {
-    padding-top: calc(var(--scale) * --value(integer));
+    padding-top: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 内边距 - 右 */
 @utility pr-s-* {
-    padding-right: calc(var(--scale) * --value(integer));
+    padding-right: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 内边距 - 下 */
 @utility pb-s-* {
-    padding-bottom: calc(var(--scale) * --value(integer));
+    padding-bottom: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 内边距 - 左 */
 @utility pl-s-* {
-    padding-left: calc(var(--scale) * --value(integer));
+    padding-left: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 外边距 - 四边 */
 @utility m-s-* {
-    margin: calc(var(--scale) * --value(integer));
+    margin: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 外边距 - 水平方向 */
 @utility mx-s-* {
-    margin-inline: calc(var(--scale) * --value(integer));
+    margin-inline: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 外边距 - 垂直方向 */
 @utility my-s-* {
-    margin-block: calc(var(--scale) * --value(integer));
+    margin-block: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 外边距 - 上 */
 @utility mt-s-* {
-    margin-top: calc(var(--scale) * --value(integer));
+    margin-top: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 外边距 - 右 */
 @utility mr-s-* {
-    margin-right: calc(var(--scale) * --value(integer));
+    margin-right: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 外边距 - 下 */
 @utility mb-s-* {
-    margin-bottom: calc(var(--scale) * --value(integer));
+    margin-bottom: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 外边距 - 左 */
 @utility ml-s-* {
-    margin-left: calc(var(--scale) * --value(integer));
+    margin-left: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 间隙 - 四向 */
 @utility gap-s-* {
-    gap: calc(var(--scale) * --value(integer));
+    gap: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 间隙 - 列间距 */
 @utility gap-x-s-* {
-    column-gap: calc(var(--scale) * --value(integer));
+    column-gap: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 间隙 - 行间距 */
 @utility gap-y-s-* {
-    row-gap: calc(var(--scale) * --value(integer));
+    row-gap: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 定位 - 上 */
 @utility top-s-* {
-    top: calc(var(--scale) * --value(integer));
+    top: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 定位 - 右 */
 @utility right-s-* {
-    right: calc(var(--scale) * --value(integer));
+    right: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 定位 - 下 */
 @utility bottom-s-* {
-    bottom: calc(var(--scale) * --value(integer));
+    bottom: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 定位 - 左 */
 @utility left-s-* {
-    left: calc(var(--scale) * --value(integer));
+    left: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 定位 - 四边 */
 @utility inset-s-* {
-    inset: calc(var(--scale) * --value(integer));
+    inset: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 定位 - 水平方向 */
 @utility inset-x-s-* {
-    left: calc(var(--scale) * --value(integer));
-    right: calc(var(--scale) * --value(integer));
+    left: calc(var(--tw-scale) * --value(integer));
+    right: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 定位 - 垂直方向 */
 @utility inset-y-s-* {
-    top: calc(var(--scale) * --value(integer));
-    bottom: calc(var(--scale) * --value(integer));
+    top: calc(var(--tw-scale) * --value(integer));
+    bottom: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 圆角 */
 @utility rounded-s-* {
-    border-radius: calc(var(--scale) * --value(integer));
+    border-radius: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 字体大小 */
 @utility text-s-* {
-    font-size: calc(var(--scale) * --value(integer));
+    font-size: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 行高 */
 @utility leading-s-* {
-    line-height: calc(var(--scale) * --value(integer));
+    line-height: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 边框宽度 */
 @utility border-s-* {
-    border-width: calc(var(--scale) * --value(integer));
+    border-width: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 轮廓偏移 */
 @utility outline-offset-s-* {
-    outline-offset: calc(var(--scale) * --value(integer));
+    outline-offset: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 平移 */
 @utility translate-x-s-* {
-    --tw-translate-x: calc(var(--scale) * --value(integer));
+    --tw-translate-x: calc(var(--tw-scale) * --value(integer));
     translate: var(--tw-translate-x) var(--tw-translate-y);
 }
 
 @utility translate-y-s-* {
-    --tw-translate-y: calc(var(--scale) * --value(integer));
+    --tw-translate-y: calc(var(--tw-scale) * --value(integer));
     translate: var(--tw-translate-x) var(--tw-translate-y);
 }
 
 /* 负值支持 */
 @utility -w-s-* {
-    width: calc(var(--scale) * --value(integer) * -1);
+    width: calc(var(--tw-scale) * --value(integer) * -1);
 }
 
 @utility -h-s-* {
-    height: calc(var(--scale) * --value(integer) * -1);
+    height: calc(var(--tw-scale) * --value(integer) * -1);
 }
 
 @utility -m-s-* {
-    margin: calc(var(--scale) * --value(integer) * -1);
+    margin: calc(var(--tw-scale) * --value(integer) * -1);
 }
 
 @utility -mx-s-* {
-    margin-inline: calc(var(--scale) * --value(integer) * -1);
+    margin-inline: calc(var(--tw-scale) * --value(integer) * -1);
 }
 
 @utility -my-s-* {
-    margin-block: calc(var(--scale) * --value(integer) * -1);
+    margin-block: calc(var(--tw-scale) * --value(integer) * -1);
 }
 
 @utility -mt-s-* {
-    margin-top: calc(var(--scale) * --value(integer) * -1);
+    margin-top: calc(var(--tw-scale) * --value(integer) * -1);
 }
 
 @utility -mr-s-* {
-    margin-right: calc(var(--scale) * --value(integer) * -1);
+    margin-right: calc(var(--tw-scale) * --value(integer) * -1);
 }
 
 @utility -mb-s-* {
-    margin-bottom: calc(var(--scale) * --value(integer) * -1);
+    margin-bottom: calc(var(--tw-scale) * --value(integer) * -1);
 }
 
 @utility -ml-s-* {
-    margin-left: calc(var(--scale) * --value(integer) * -1);
+    margin-left: calc(var(--tw-scale) * --value(integer) * -1);
 }
 
 @utility -top-s-* {
-    top: calc(var(--scale) * --value(integer) * -1);
+    top: calc(var(--tw-scale) * --value(integer) * -1);
 }
 
 @utility -right-s-* {
-    right: calc(var(--scale) * --value(integer) * -1);
+    right: calc(var(--tw-scale) * --value(integer) * -1);
 }
 
 @utility -bottom-s-* {
-    bottom: calc(var(--scale) * --value(integer) * -1);
+    bottom: calc(var(--tw-scale) * --value(integer) * -1);
 }
 
 @utility -left-s-* {
-    left: calc(var(--scale) * --value(integer) * -1);
+    left: calc(var(--tw-scale) * --value(integer) * -1);
 }
 
 @utility -inset-s-* {
-    inset: calc(var(--scale) * --value(integer) * -1);
+    inset: calc(var(--tw-scale) * --value(integer) * -1);
 }
 
 @utility -inset-x-s-* {
-    left: calc(var(--scale) * --value(integer) * -1);
-    right: calc(var(--scale) * --value(integer) * -1);
+    left: calc(var(--tw-scale) * --value(integer) * -1);
+    right: calc(var(--tw-scale) * --value(integer) * -1);
 }
 
 @utility -inset-y-s-* {
-    top: calc(var(--scale) * --value(integer) * -1);
-    bottom: calc(var(--scale) * --value(integer) * -1);
+    top: calc(var(--tw-scale) * --value(integer) * -1);
+    bottom: calc(var(--tw-scale) * --value(integer) * -1);
 }
 
 @utility -translate-x-s-* {
-    --tw-translate-x: calc(var(--scale) * --value(integer) * -1);
+    --tw-translate-x: calc(var(--tw-scale) * --value(integer) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
 }
 
 @utility -translate-y-s-* {
-    --tw-translate-y: calc(var(--scale) * --value(integer) * -1);
+    --tw-translate-y: calc(var(--tw-scale) * --value(integer) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
 }
 
 /* 滚动边距 */
 @utility scroll-m-s-* {
-    scroll-margin: calc(var(--scale) * --value(integer));
+    scroll-margin: calc(var(--tw-scale) * --value(integer));
 }
 
 @utility scroll-mx-s-* {
-    scroll-margin-inline: calc(var(--scale) * --value(integer));
+    scroll-margin-inline: calc(var(--tw-scale) * --value(integer));
 }
 
 @utility scroll-my-s-* {
-    scroll-margin-block: calc(var(--scale) * --value(integer));
+    scroll-margin-block: calc(var(--tw-scale) * --value(integer));
 }
 
 @utility scroll-mt-s-* {
-    scroll-margin-top: calc(var(--scale) * --value(integer));
+    scroll-margin-top: calc(var(--tw-scale) * --value(integer));
 }
 
 @utility scroll-mr-s-* {
-    scroll-margin-right: calc(var(--scale) * --value(integer));
+    scroll-margin-right: calc(var(--tw-scale) * --value(integer));
 }
 
 @utility scroll-mb-s-* {
-    scroll-margin-bottom: calc(var(--scale) * --value(integer));
+    scroll-margin-bottom: calc(var(--tw-scale) * --value(integer));
 }
 
 @utility scroll-ml-s-* {
-    scroll-margin-left: calc(var(--scale) * --value(integer));
+    scroll-margin-left: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 滚动内边距 */
 @utility scroll-p-s-* {
-    scroll-padding: calc(var(--scale) * --value(integer));
+    scroll-padding: calc(var(--tw-scale) * --value(integer));
 }
 
 @utility scroll-px-s-* {
-    scroll-padding-inline: calc(var(--scale) * --value(integer));
+    scroll-padding-inline: calc(var(--tw-scale) * --value(integer));
 }
 
 @utility scroll-py-s-* {
-    scroll-padding-block: calc(var(--scale) * --value(integer));
+    scroll-padding-block: calc(var(--tw-scale) * --value(integer));
 }
 
 @utility scroll-pt-s-* {
-    scroll-padding-top: calc(var(--scale) * --value(integer));
+    scroll-padding-top: calc(var(--tw-scale) * --value(integer));
 }
 
 @utility scroll-pr-s-* {
-    scroll-padding-right: calc(var(--scale) * --value(integer));
+    scroll-padding-right: calc(var(--tw-scale) * --value(integer));
 }
 
 @utility scroll-pb-s-* {
-    scroll-padding-bottom: calc(var(--scale) * --value(integer));
+    scroll-padding-bottom: calc(var(--tw-scale) * --value(integer));
 }
 
 @utility scroll-pl-s-* {
-    scroll-padding-left: calc(var(--scale) * --value(integer));
+    scroll-padding-left: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 文本缩进 */
 @utility indent-s-* {
-    text-indent: calc(var(--scale) * --value(integer));
+    text-indent: calc(var(--tw-scale) * --value(integer));
 }
 
 /* 字间距 */
 @utility tracking-s-* {
-    letter-spacing: calc(var(--scale) * --value(integer));
+    letter-spacing: calc(var(--tw-scale) * --value(integer));
 }
 
 /* flex basis */
 @utility basis-s-* {
-    flex-basis: calc(var(--scale) * --value(integer));
+    flex-basis: calc(var(--tw-scale) * --value(integer));
 }
