@@ -5,11 +5,11 @@ Tailwind CSS v4 移动端适配工具类库，基于设计稿像素的等比缩�
 ## 安装
 
 ```bash
-npm install -D tailwind4-scale
+npm install tailwind4-scale
 # 或
-bun add -D tailwind4-scale
+bun add tailwind4-scale
 # 或
-pnpm add -D tailwind4-scale
+pnpm add tailwind4-scale
 ```
 
 ## 使用方式
@@ -19,6 +19,32 @@ pnpm add -D tailwind4-scale
 ```css
 @import "tailwindcss";
 @import "tailwind4-scale";
+```
+
+## 在 JS 中使用
+
+对于需要在 JavaScript 中动态设置缩放值的场景（如内联样式），可以导入 `scale` 函数：
+
+```js
+import { scale } from "tailwind4-scale/js";
+
+scale(100)   // "calc(100 * var(--tw-scale))"
+scale(-20)   // "calc(-20 * var(--tw-scale))"
+scale(0)     // "0"
+```
+
+在 React 中使用：
+
+```jsx
+<div style={{ width: scale(100), padding: scale(16) }}>
+  内联样式也支持等比缩放
+</div>
+```
+
+支持自定义 CSS 变量名：
+
+```js
+scale(100, "--my-scale")  // "calc(100 * var(--my-scale))"
 ```
 
 ## 工具类说明
@@ -72,8 +98,8 @@ pnpm add -D tailwind4-scale
 
 ## 原理
 
-- `--scale: 0.0625rem` 定义了 1 设计稿像素 = 1/16 rem
-- 配合 viewport.css 中的 `font-size: 4.26667vw`（100vw / 375 * 16）
+- `--tw-scale: 0.0625rem` 定义了 1 设计稿像素 = 1/16 rem
+- 配合 `html` 上的 `font-size: 4.26667vw`（100vw / 375 * 16）
 - 实现设计稿像素到实际像素的等比映射
 
 | 设计稿宽度 | 视口宽度 | 1rem    | w-s-100 实际宽度 |
