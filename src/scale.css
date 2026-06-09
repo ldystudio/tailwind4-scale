@@ -18,18 +18,16 @@
     --tw-scale: 0.0625rem;
     /* 100vw / 375 * 16，375px 视口下 = 16px */
     --tw-viewport-font-size: 4.26667vw;
-    /* 320px × 4.26667% */
+    /* 320 / 375 * 16 = 13.653px */
     --tw-viewport-font-size-min: 13.653px;
-    /* 750px × 4.26667% */
-    --tw-viewport-font-size-max: 32px;
+    /* 480 / 375 * 16 = 20.48px */
+    --tw-viewport-font-size-max: 20.48px;
 }
 
 html {
-    font-size: clamp(
-        var(--tw-viewport-font-size-min),
-        var(--tw-viewport-font-size),
-        var(--tw-viewport-font-size-max)
-    );
+    font-size: clamp(var(--tw-viewport-font-size-min),
+            var(--tw-viewport-font-size),
+            var(--tw-viewport-font-size-max));
 }
 
 /* 宽度 */

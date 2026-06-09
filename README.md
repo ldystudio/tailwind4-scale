@@ -121,11 +121,11 @@ scale(100, "--my-scale")  // "calc(100 * var(--my-scale))"
   --tw-scale: 0.05rem;
 
   /* 视口字体大小，默认：4.26667vw（100vw / 375 * 16） */
-  --tw-viewport-font-size: 4.1026vw; /* 基于 390px 设计稿 */
+  --tw-viewport-font-size: 4.1026vw; /* 修改成基于 390px 设计稿 */
 
   /* 限制最大/最小字体大小 */
-  --tw-viewport-font-size-min: 12px;  /* 默认：13.653px */
-  --tw-viewport-font-size-max: 24px;  /* 默认：32px */
+  --tw-viewport-font-size-min: 12px;  /* 默认：13.653px / 320px宽度 */
+  --tw-viewport-font-size-max: 24px;  /* 默认：20.48px / 480px宽度 */
 }
 ```
 
